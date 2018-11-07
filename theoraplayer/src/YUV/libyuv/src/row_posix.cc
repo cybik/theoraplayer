@@ -16,7 +16,7 @@ extern "C" {
 #endif
 
 // This module is for GCC x86 and x64.
-#if !defined(_ANDROID) && !defined(LIBYUV_DISABLE_X86) && (defined(__x86_64__) || defined(__i386__))
+#if !defined(_ANDROID) && !defined(LIBYUV_DISABLE_X86) && (defined(__x86_64__) || defined(__i386__))&& defined(THEP_POSIX)
 
 #if defined(HAS_ARGBTOYROW_SSSE3) || defined(HAS_ARGBGRAYROW_SSSE3)
 

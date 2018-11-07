@@ -16,7 +16,7 @@ namespace libyuv {
 extern "C" {
 #endif
 
-#if !defined(LIBYUV_DISABLE_X86) && (defined(__x86_64__) || defined(__i386__))
+#if !defined(LIBYUV_DISABLE_X86) && (defined(__x86_64__) || defined(__i386__)) && defined(THEP_POSIX)
 
 uint32 SumSquareError_SSE2(const uint8* src_a, const uint8* src_b, int count) {
   uint32 sse;
@@ -65,7 +65,7 @@ uint32 SumSquareError_SSE2(const uint8* src_a, const uint8* src_b, int count) {
 #endif  // defined(__x86_64__) || defined(__i386__)
 
 #if !defined(LIBYUV_DISABLE_X86) && \
-    (defined(__x86_64__) || (defined(__i386__) && !defined(__pic__)))
+    (defined(__x86_64__) || (defined(__i386__) && !defined(__pic__)))&& defined(THEP_POSIX)
 #define HAS_HASHDJB2_SSE41
 static uvec32 kHash16x33 = { 0x92d9e201, 0, 0, 0 };  // 33 ^ 16
 static uvec32 kHashMul0 = {
