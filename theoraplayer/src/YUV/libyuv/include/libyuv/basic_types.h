@@ -114,4 +114,8 @@ typedef signed char int8;
 #define LIBYUV_LITTLE_ENDIAN
 #endif
 
+#if defined(_MAC)
+#define THEP_POSIX
+#endif
+
 #endif  // INCLUDE_LIBYUV_BASIC_TYPES_H_
